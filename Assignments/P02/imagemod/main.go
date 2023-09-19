@@ -2,6 +2,10 @@
 
 package main
 
+import (
+	"myimageapp/imageManipulator"
+)
+
 func main() {
 	// Create an ImageManipulator instance
 	im := imageManipulator.NewImageManipulator(800, 600)
