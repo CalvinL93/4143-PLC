@@ -2,10 +2,6 @@
 
 package main
 
-import (
-    "myimageapp/imagemod"
-)
-
 func main() {
 	// Create an ImageManipulator instance
 	im := imageManipulator.NewImageManipulator(800, 600)
