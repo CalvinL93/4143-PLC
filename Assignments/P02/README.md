@@ -2,7 +2,7 @@
 ### Calvin Leavy
 ### Description:
 
-Run a Go Program
+A Go program using a package to maniuplate pictures.
 
 ### Files
 
@@ -10,7 +10,10 @@ Run a Go Program
 | :---: | --------------- | -------------------------------------------------- |
 |   1   | main.go         | Main driver file that runs program                 |
 |   2   | go.mod          | gp.mod file                                        |
-|   3   | mascot/mascot.go | mascot package that contains function to return mascot |
+|   3   | imageManipulator/imageManipulator.go | imageManipulator package for manipulating images |
+|   4   | mustangs.jpg    | .jpg photo of mustangs                             |
+|   5   | mustangs.png    | .png photo of mustangs                             |
+|   6   | go.sum          | go.sum file                                        |
 
 ### Instructions
 
