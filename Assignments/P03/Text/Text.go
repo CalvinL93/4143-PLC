@@ -1,6 +1,7 @@
-package main
+package Text
 
 import (
+	"fmt"
 	"io/ioutil"
 	"os"
 
@@ -8,9 +9,16 @@ import (
 	"golang.org/x/image/font/gofont/goregular"
 )
 
-func main() {
+func Text() {
 	const W = 500
 	const H = 300
+
+	file, err := os.Open("downloadedImage.png")
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+	defer file.Close()
 
 	// Create a temporary file and write the byte slice to it
 	tempFile, err := ioutil.TempFile("", "font-*.ttf")
@@ -33,8 +41,8 @@ func main() {
 	dc.Clear()
 
 	dc.SetRGB(.5, 0, 0)
-	dc.DrawStringAnchored("Hello, world!", W/2, H/2, 0.5, 0.5)
+	dc.DrawStringAnchored(file.Name(), W/2, H/2, 0.5, 0.5)
 	dc.Stroke()
 
-	dc.SavePNG("hello.png")
+	dc.SavePNG("imageText.png")
 }

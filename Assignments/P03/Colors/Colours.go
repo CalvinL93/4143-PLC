@@ -1,4 +1,4 @@
-package main
+package Colours
 
 import (
 	"fmt"
@@ -7,8 +7,8 @@ import (
 	"os"
 )
 
-func main() {
-	reader, err := os.Open("image.png")
+func Colours() {
+	reader, err := os.Open("textImage.png")
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return

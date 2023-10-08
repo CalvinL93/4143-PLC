@@ -1,4 +1,4 @@
-package main
+package Grayscale
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func main() {
+func Grayscale() {
 	// Open the original image
 	reader, err := os.Open("image.png")
 	if err != nil {
@@ -47,7 +47,7 @@ func main() {
 	}
 
 	// Save the grayscale image
-	grayFile, err := os.Create("gray_image.png")
+	grayFile, err := os.Create("imageGray.png")
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
