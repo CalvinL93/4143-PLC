@@ -15,7 +15,11 @@ func downloadImagesSequential(urls []string) {
 	for i, imageUrl := range urls {
 		// Set filename based on position in loop
 		filename := fmt.Sprintf("image_%d.jpg", i)
-		downloadImage(imageUrl, filename)
+		err := downloadImage(imageUrl, filename)
+		// check if download failed
+		if err != nil {
+			fmt.Printf("Download failed: %v\n", err)
+		}
 	}
 }
 
@@ -34,8 +38,11 @@ func downloadImagesConcurrent(urls []string) {
 
 			// Set filename based on position in loop
 			filename := fmt.Sprintf("image_%d.jpg", i)
-
-			downloadImage(imageUrl, filename)
+			err := downloadImage(imageUrl, filename)
+			// check if download failed
+			if err != nil {
+				fmt.Printf("Download failed: %v\n", err)
+			}
 		}(imageUrl, i)
 	}
 	// Wait for all pictures to be downloaded
@@ -73,7 +80,6 @@ func downloadImage(url, filename string) error {
 	if err != nil {
 		return err
 	}
-
 	defer resp.Body.Close()
 
 	// Create file
@@ -81,7 +87,6 @@ func downloadImage(url, filename string) error {
 	if err != nil {
 		return err
 	}
-
 	defer file.Close()
 
 	// Copy the image from the response body to the file.
