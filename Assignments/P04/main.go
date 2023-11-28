@@ -68,6 +68,7 @@ func main() {
 
 // Helper function to download and save a single image.
 func downloadImage(url, filename string) error {
+	// Get image from address
 	resp, err := http.Get(url)
 	if err != nil {
 		return err
@@ -75,6 +76,7 @@ func downloadImage(url, filename string) error {
 
 	defer resp.Body.Close()
 
+	// Create file
 	file, err := os.Create(filename)
 	if err != nil {
 		return err

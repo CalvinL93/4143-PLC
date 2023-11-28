@@ -2,7 +2,10 @@
 ### Calvin Leavy
 ### Description:
 
-A Go program that concurrently downloads a set of images from given URLs and saves them to disk.
+A Go program that concurrently downloads a set of images from given URLs and saves them to disk. 
+Program compares time taken to download images squentially vs concurrently.
+Time taken for Squential download: 1.6779892 seconds
+Time taken for Concurrent download: 226.6157 miliseconds
 
 ### Files
 
